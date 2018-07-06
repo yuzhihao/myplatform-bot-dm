@@ -81,6 +81,24 @@ public class DialogueManager {
 
     }
 
+    /**
+     * 从本地json文件加载机器人
+     */
+    public void initFromLocal(){
+        String botJson = ConfigLoader.loadJsonFromFile("dialogue/target/classes/json_template/bot.json");
+        for (Bot bot: JacksonUtils.toList(botJson,Bot.class)){
+            (botMap = new HashMap<Long,Bot>()).put(bot.getId(),bot);
+        }
+        String sceneJson = ConfigLoader.loadJsonFromFile("dialogue/target/classes/json_template/scene.json");
+        for (Scene scene: JacksonUtils.toList(sceneJson,Scene.class)){
+            (sceneMap =  new HashMap<Long,Scene>()).put(scene.getId(),scene);
+        }
+        String nodeJson = ConfigLoader.loadJsonFromFile("dialogue/target/classes/json_template/stateNode.json");
+        for (StateNode node:JacksonUtils.toList(nodeJson,StateNode.class)){
+            (nodeMap = new HashMap<Long,StateNode>()).put(node.getId(),node);
+        }
+    }
+    
     public DialogueManager(){
         // 初始化 所有 bot
         LOGGER.info("init bots");
