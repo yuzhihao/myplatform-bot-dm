@@ -1,0 +1,14 @@
+[
+  {
+    "id":"1",
+    "sceneName":"assuranceScene",
+    "botId":"1",
+    "default":true,
+
+    "defaultNodeId":"1",
+    "nodeIdList":["1","2"],
+
+    "gmtCreate":"2018-07-05",
+    "gmtUpdate":"2018-07-05"
+  }
+]
