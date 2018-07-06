@@ -1,7 +1,7 @@
 package com.yuzhihao.myplatform.bot.core.interfaces;
 
 import com.yuzhihao.myplatform.bot.core.common.ContextedString;
-import com.yuzhihao.myplatform.bot.core.pojo.DialogueContext;
+import com.yuzhihao.myplatform.bot.core.pojo.DialogContext;
 
 import java.util.Map;
 
@@ -13,7 +13,7 @@ public interface Condition {
      * @param context
      * @return
      */
-    boolean accept(DialogueContext context);
+    boolean accept(DialogContext context);
 
 
 }

@@ -8,4 +8,6 @@ public class ConfigLoader {
     public static JSONPObject loadConfigFromJson(){
         return null;
     }
+
+    //public static MiddlewareManager initMiddlewareManager(){return null;}
 }

@@ -24,6 +24,7 @@ public abstract class DialogueMiddleware implements Middleware {
      * 判断配置中是否有配置该模块
      */
     protected boolean isConfigured(){
+        //TODO
         return true;
     }
 

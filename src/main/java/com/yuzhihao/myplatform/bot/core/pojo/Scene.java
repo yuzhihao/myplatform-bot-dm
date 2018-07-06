@@ -8,6 +8,8 @@ import java.util.List;
 public class Scene {
     private Long id;
     private String name;
+    private Long botId;
+
     private List<StateNode> nodes;
 
     public Long getId() {
@@ -32,5 +34,13 @@ public class Scene {
 
     public void setNodes(List<StateNode> nodes) {
         this.nodes = nodes;
+    }
+
+    public Long getBotId() {
+        return botId;
+    }
+
+    public void setBotId(Long botId) {
+        this.botId = botId;
     }
 }

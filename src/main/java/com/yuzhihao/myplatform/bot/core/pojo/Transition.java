@@ -1,25 +1,32 @@
 package com.yuzhihao.myplatform.bot.core.pojo;
 
 import com.yuzhihao.myplatform.bot.core.interfaces.Condition;
-import com.yuzhihao.myplatform.bot.core.pojo.StateNode;
 
 import java.util.List;
 
 public class Transition {
 
-    List<Condition> conditions;
-    StateNode to;
+    private List<Condition> conditions;
+    private StateNode to;
 
     public StateNode getTo(){
         return this.to;
     }
 
-    public boolean acceptAllConditions(DialogueContext context){
+    public boolean acceptAllConditions(DialogContext context){
         for(Condition condition: conditions){
             if(!condition.accept(context)){
                 return false;
             }
         }
         return true;
+    }
+
+    public void setConditions(List<Condition> conditions) {
+        this.conditions = conditions;
+    }
+
+    public void setTo(StateNode to) {
+        this.to = to;
     }
 }

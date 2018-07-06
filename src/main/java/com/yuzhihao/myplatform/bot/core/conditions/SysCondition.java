@@ -1,8 +1,8 @@
-package com.yuzhihao.myplatform.bot.core;
+package com.yuzhihao.myplatform.bot.core.conditions;
 
 import com.yuzhihao.myplatform.bot.core.common.ContextedString;
 import com.yuzhihao.myplatform.bot.core.interfaces.Condition;
-import com.yuzhihao.myplatform.bot.core.pojo.DialogueContext;
+import com.yuzhihao.myplatform.bot.core.pojo.DialogContext;
 
 import java.util.Map;
 
@@ -15,7 +15,7 @@ public class SysCondition implements Condition {
     }
 
     @Override
-    public boolean accept(DialogueContext context) {
+    public boolean accept(DialogContext context) {
         return false;
     }
 

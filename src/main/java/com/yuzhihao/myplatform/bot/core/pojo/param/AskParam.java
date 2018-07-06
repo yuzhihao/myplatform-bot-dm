@@ -1,5 +1,6 @@
 package com.yuzhihao.myplatform.bot.core.pojo.param;
 
+import com.yuzhihao.myPlatform.common.exception.AppRuntimeException;
 import com.yuzhihao.myplatform.bot.core.pojo.StateNode;
 
 /**
@@ -8,10 +9,11 @@ import com.yuzhihao.myplatform.bot.core.pojo.StateNode;
  * @author yuzhihao
  * @date 2018/06/05
  */
-public class AskParam {
+public class AskParam{
     private String question;
     private String userId;
     private String sessionId;
+    private String botName;
 
     public String getQuestion() {
         return question;
@@ -37,5 +39,18 @@ public class AskParam {
         this.sessionId = sessionId;
     }
 
+    public boolean checkParam(){
+        if (botName == null){
+            throw new AppRuntimeException();
+        }
+        return true;
+    }
 
+    public String getBotName() {
+        return botName;
+    }
+
+    public void setBotName(String botName) {
+        this.botName = botName;
+    }
 }

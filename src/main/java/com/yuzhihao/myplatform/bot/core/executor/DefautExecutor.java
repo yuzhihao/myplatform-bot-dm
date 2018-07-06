@@ -2,6 +2,9 @@ package com.yuzhihao.myplatform.bot.core.executor;
 
 import com.yuzhihao.myplatform.bot.core.interfaces.Executor;
 import com.yuzhihao.myplatform.bot.core.pojo.AnswerInfo;
+import com.yuzhihao.myplatform.bot.core.pojo.DialogContext;
+
+import java.util.Map;
 
 /**
  * 问答流程执行 基类
@@ -16,12 +19,17 @@ public class DefautExecutor implements Executor{
     }
 
     @Override
-    public void execute(){
+    public void setUp(Map<String,Object> params) {
 
-        //entity识别
+    }
 
-        //intent识别
+    @Override
+    public void execute(DialogContext context){
 
-        //答案生成
+        //entity识别结果
+
+        //intent识别结果
+
+        //答案生成 TODO
     }
 }

@@ -22,7 +22,6 @@ public class ContextMiddleware extends DialogueMiddleware {
         //根据sessionId获取对话上下文
         //从redis cache中尝试获取上次对话信息
 
-
     }
 
     @Override

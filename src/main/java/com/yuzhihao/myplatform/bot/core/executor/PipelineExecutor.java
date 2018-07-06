@@ -1,6 +1,7 @@
 package com.yuzhihao.myplatform.bot.core.executor;
 
 import com.yuzhihao.myplatform.bot.core.pojo.AnswerInfo;
+import com.yuzhihao.myplatform.bot.core.pojo.DialogContext;
 
 public class PipelineExecutor extends DefautExecutor{
 
@@ -13,7 +14,7 @@ public class PipelineExecutor extends DefautExecutor{
     }
 
     @Override
-    public void execute(){
+    public void execute(DialogContext context){
         pipeline();
     }
 }

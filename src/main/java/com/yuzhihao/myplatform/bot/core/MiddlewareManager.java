@@ -1,14 +1,11 @@
 package com.yuzhihao.myplatform.bot.core;
 
 import com.yuzhihao.myplatform.bot.core.middleware.after.IntentExecutMiddleware;
-import com.yuzhihao.myplatform.bot.core.middleware.after.NLGeneratorMiddleware;
+import com.yuzhihao.myplatform.bot.core.middleware.after.NLGMiddleware;
 import com.yuzhihao.myplatform.bot.core.middleware.after.ScoreRankMiddleware;
-import com.yuzhihao.myplatform.bot.core.middleware.pre.ContextMiddleware;
+import com.yuzhihao.myplatform.bot.core.middleware.pre.*;
 import com.yuzhihao.myplatform.bot.core.middleware.after.DefalutAnswerMiddleware;
 import com.yuzhihao.myplatform.bot.core.middleware.DialogueMiddleware;
-import com.yuzhihao.myplatform.bot.core.middleware.pre.DomainRecgonizeMiddleware;
-import com.yuzhihao.myplatform.bot.core.middleware.pre.GreetingMiddleware;
-import com.yuzhihao.myplatform.bot.core.middleware.pre.InterruptHandlerMiddleware;
 import com.yuzhihao.myplatform.bot.core.pojo.param.AskParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,8 +39,9 @@ public class MiddlewareManager {
         //领域识别
         middlewares.add(new DomainRecgonizeMiddleware());
         //实体识别
-
+        middlewares.add(new EntityRecognizeMiddleware());
         //意图识别
+        middlewares.add(new IntentExecutMiddleware());
 
         /*** 后处理中间件 ***/
         // 结果评分与筛选
@@ -51,7 +49,7 @@ public class MiddlewareManager {
         // 意图执行（调用第三方API）
         middlewares.add(new IntentExecutMiddleware());
         // 自然语言生成（handlerbar）
-        middlewares.add(new NLGeneratorMiddleware());
+        middlewares.add(new NLGMiddleware());
         // 缺省回复
         middlewares.add(new DefalutAnswerMiddleware());
         LOGGER.info("init middlewares success.");

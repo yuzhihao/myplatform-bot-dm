@@ -28,6 +28,10 @@ public class StateNode {
      */
     private Long sceneId;
     /**
+     * 是否是初始节点
+     */
+    private boolean isInital;
+    /**
      * 子节点
      */
     private StateNode child;
@@ -47,6 +51,10 @@ public class StateNode {
      * 是否跳转过
      */
     private boolean jumped = false;
+    /**
+     *
+     */
+    private boolean park = false;
 
     private List<Transition> transitions;
 
@@ -82,5 +90,57 @@ public class StateNode {
 
     public void setExecutors(List<Executor> executors) {
         this.executors = executors;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Long getBotId() {
+        return botId;
+    }
+
+    public void setBotId(Long botId) {
+        this.botId = botId;
+    }
+
+    public Long getSceneId() {
+        return sceneId;
+    }
+
+    public void setSceneId(Long sceneId) {
+        this.sceneId = sceneId;
+    }
+
+    public void setTransitions(List<Transition> transitions) {
+        this.transitions = transitions;
+    }
+
+    public boolean isInital() {
+        return isInital;
+    }
+
+    public void setInital(boolean inital) {
+        isInital = inital;
+    }
+
+    public boolean isPark() {
+        return park;
+    }
+
+    public void setPark(boolean park) {
+        this.park = park;
     }
 }

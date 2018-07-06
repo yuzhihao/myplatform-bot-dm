@@ -13,4 +13,27 @@ public class Bot {
     private String name;
     private List<Scene> scenes;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Scene> getScenes() {
+        return scenes;
+    }
+
+    public void setScenes(List<Scene> scenes) {
+        this.scenes = scenes;
+    }
 }
