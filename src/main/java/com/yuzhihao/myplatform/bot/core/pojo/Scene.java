@@ -9,6 +9,7 @@ public class Scene {
     private Long id;
     private String name;
     private Long botId;
+    private Long defaultNodeId;
 
     private List<StateNode> nodes;
 
@@ -42,5 +43,13 @@ public class Scene {
 
     public void setBotId(Long botId) {
         this.botId = botId;
+    }
+
+    public Long getDefaultNodeId() {
+        return defaultNodeId;
+    }
+
+    public void setDefaultNodeId(Long defaultNodeId) {
+        this.defaultNodeId = defaultNodeId;
     }
 }

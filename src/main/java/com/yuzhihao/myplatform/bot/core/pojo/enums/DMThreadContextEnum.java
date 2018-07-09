@@ -7,6 +7,7 @@ public enum DMThreadContextEnum {
     SESSION_ID,
     QUESTION_ID,
     QUESTION,
+    USER_ID,
     BOT("当前机器人"),
     DOMAIN_SCENE("识别领域"),
     STATE_NODE_CURRENT,

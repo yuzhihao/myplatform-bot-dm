@@ -1,5 +1,6 @@
 package com.yuzhihao.myplatform.bot.core.pojo;
 
+import com.yuzhihao.myplatform.bot.core.pojo.results.EntityResult;
 import com.yuzhihao.myplatform.bot.core.pojo.results.IntentResult;
 import com.yuzhihao.myplatform.bot.core.pojo.results.NLUResult;
 
@@ -13,6 +14,7 @@ import java.util.List;
 public class DialogContext implements Serializable{
     private List<Question> questionList;
     private NLUResult nluResult;
+    private EntityResult entityResult;
     private IntentResult intentResult;
 
     public NLUResult getNluResult() {
@@ -37,5 +39,13 @@ public class DialogContext implements Serializable{
 
     public void setIntentResult(IntentResult intentResult) {
         this.intentResult = intentResult;
+    }
+
+    public EntityResult getEntityResult() {
+        return entityResult;
+    }
+
+    public void setEntityResult(EntityResult entityResult) {
+        this.entityResult = entityResult;
     }
 }

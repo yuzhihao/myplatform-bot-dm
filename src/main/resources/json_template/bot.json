@@ -1,0 +1,26 @@
+[
+  {
+    "id":"1",
+    "botName":"cmb_assurance",
+    "userId":"1",
+    "defaultSceneId":"1",
+    "gmtCreate":"2018-07-05",
+    "gmtUpdate":"2018-07-05",
+    "middlewares":{
+      "DomainRecgonizeMiddleware":{
+        "url":"",
+        "domainScene":{
+          "assurance":"1"
+        }
+      },
+      "EntityRecognizeMiddleware": {
+        "url": ""
+      },
+      "IntentRecognizeMiddleware": {
+        "url": ""
+      }
+    }
+
+
+  }
+]

@@ -13,7 +13,7 @@ public class AskParam{
     private String question;
     private String userId;
     private String sessionId;
-    private String botName;
+    private String botId;
 
     public String getQuestion() {
         return question;
@@ -40,17 +40,17 @@ public class AskParam{
     }
 
     public boolean checkParam(){
-        if (botName == null){
+        if (botId == null){
             throw new AppRuntimeException();
         }
         return true;
     }
 
-    public String getBotName() {
-        return botName;
+    public void setBotId(String botId) {
+        this.botId = botId;
     }
 
-    public void setBotName(String botName) {
-        this.botName = botName;
+    public String getBotId(){
+        return this.botId;
     }
 }

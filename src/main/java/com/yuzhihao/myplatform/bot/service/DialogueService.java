@@ -31,11 +31,13 @@ public class DialogueService {
         // Param check
         askParam.checkParam();
         // Get session by id or new
-        Session session = Optional.ofNullable(loadSession(askParam.getSessionId())).orElse(new Session());
+        Session session = Optional.ofNullable(loadSession(askParam.getBotId(),
+                askParam.getSessionId())).orElse(new Session());
+        askParam.setSessionId(String.valueOf(session.getId()));
         // dialog
-        AnswerInfo answerInfo = dialogueManager.ask(askParam);
+        AnswerInfo answerInfo = dialogueManager.ask(askParam, session);
         // save session
-        saveSession(session);
+        saveSession(askParam.getBotId(), askParam.getSessionId(), session);
         return answerInfo;
     }
 
@@ -44,11 +46,9 @@ public class DialogueService {
      * @param sessionId
      * @return
      */
-    public Session loadSession(String sessionId){
-        Session session = JacksonUtils.toPojo(redisService.get(String.format("session:%s",sessionId)), Session.class);
-        if (session!=null){
-            DMThreadContext.getInstance().set(DMThreadContextEnum.CONTEXT,session.getDialogContext());
-        }
+    public Session loadSession(String botId, String sessionId){
+        Session session = JacksonUtils.toPojo(redisService.get(
+                String.format("bot:%s:session:%s", botId, sessionId)), Session.class);
         return session;
     }
 
@@ -56,9 +56,8 @@ public class DialogueService {
      * 更新session到缓存
      * @param session
      */
-    public void saveSession(Session session){
-        session.setDialogContext((DialogContext) DMThreadContext.getInstance().get(DMThreadContextEnum.CONTEXT));
-        redisService.set("key",JacksonUtils.toJsonStr(session));
+    public void saveSession(String botId, String sessionId, Session session){
+        redisService.set(String.format("bot:%s:session:%s", botId, sessionId),JacksonUtils.toJsonStr(session));
     }
 
 }
