@@ -1,0 +1,34 @@
+{
+  "id":"1",
+  "nodeName":"买机票",
+  "sceneId":"1",
+  "isLeaf":false,
+  "executors":[
+    {
+      "name":"默认执行器",
+      "class":"DefaultExecutor",
+      "params":[
+        {
+          "name":"",
+          "type":"",
+          "value":""
+        }
+      ]
+    }
+  ],
+  "transitions":[
+    {
+      "toNodeId":"2",
+      "conditions":[
+        {
+          "name":"slot填充满",
+          "class":"SlotFullCondition",
+          "defineType":"system",
+          "judgeType":"or"
+        }
+      ]
+    }
+  ],
+  "gmtCreate":"",
+  "gmtUpdate":""
+}

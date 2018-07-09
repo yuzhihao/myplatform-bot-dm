@@ -1,0 +1,12 @@
+{
+  "id":"1",
+  "sceneName":"defaultScene",
+  "botId":"1",
+  "isDefault":true,
+  "sm": {
+    "defaultNodeId":"1",
+    "nodeIdList":["1","2"]
+  },
+  "gmtCreate":"",
+  "gmtUpdate":""
+}
